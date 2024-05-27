@@ -1,0 +1,15 @@
+<mat-card class="topic-card" >
+    <mat-card-content>
+      <mat-card-title class="h6">{{topic.title}}</mat-card-title>
+      <small class="text-muted mat-headline-small">{{ topic.score }} points by {{ topic.by }} | codeberg.org</small>
+      <hr class="hr" />
+      <div class="row">
+        <div class="col-md-6">
+          <small class="text-muted"><i class="far fa-clock"></i> {{ getTimeAgo(topic.time) }}</small>
+        </div>
+        <div class="col-md-6 d-flex justify-content-end">
+          <ng-content select="[slot=comments-button]"></ng-content>
+        </div> 
+      </div>     
+    </mat-card-content>
+</mat-card>

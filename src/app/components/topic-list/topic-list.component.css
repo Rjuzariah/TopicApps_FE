@@ -1,0 +1,22 @@
+.col-md-6{
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+.col-md-12{
+    padding-bottom: 0.2%;
+}
+.custom-button {
+    background-color: #FFEADC;
+    /* Add additional styles as needed */
+    color: #FF6600; /* Example text color */
+    border: none; /* Example border style */
+    padding: 10px 20px; /* Example padding */
+    /* Add any other styles you want to apply to the button */
+}
+.custom-button:hover {
+    background-color: #FFDAB9; /* Change background color on hover */
+}
+.custom-button:focus {
+    outline: none; /* Remove default focus outline */
+    color: #FF6600; /* Prevent font color change on click */
+}

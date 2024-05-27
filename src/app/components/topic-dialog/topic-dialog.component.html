@@ -1,0 +1,24 @@
+<div class="dialog-header">
+  <div mat-dialog-title>
+    <span class="fw-bold h5">{{data.topic.title}}</span><br/>
+    <small class="text-muted mat-headline-small">{{ data.topic.score }} points by {{ data.topic.by }}</small> | 
+    <small class="text-muted mat-headline-small">codeberg.org</small> | 
+    <small class="text-muted mat-headline-small"><i class="far fa-clock"></i> {{ getTimeAgo(data.topic.time) }}</small>
+  </div>
+  <button mat-icon-button [mat-dialog-close]="true" class="close-button"><mat-icon>close</mat-icon></button>
+</div>
+<mat-divider></mat-divider>
+<mat-progress-bar mode="indeterminate" *ngIf="commentLoading"></mat-progress-bar>
+<div mat-dialog-content>
+  <p class="col-md-12 col-sm-11" *ngIf="comments.length === 0 && !commentLoading">No data found.</p>
+  <div class="col-md-12 col-sm-11" *ngFor="let comment of comments">
+      <mat-card class="mat-card-comment-box">
+        <mat-card-content>
+          <p class="fw-bold">{{comment.by}}</p>
+          <div [innerHTML]="comment.text"></div>
+          </mat-card-content>
+      </mat-card>
+      <small class="text-muted mat-headline-small">{{ getTimeAgo(comment.time) }}</small>
+      <br/>
+  </div>
+</div>

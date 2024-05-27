@@ -1,0 +1,12 @@
+<mat-toolbar class="topic-app-menu-bar">
+  <app-svg-icon-hacker-news></app-svg-icon-hacker-news>
+</mat-toolbar>
+<div *ngIf="loading">
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+</div>
+
+<div class="container">
+    <router-outlet></router-outlet>
+</div>
+
+

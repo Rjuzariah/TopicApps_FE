@@ -1,0 +1,23 @@
+
+<div class="row">
+    <div *ngFor="let topic of topics; let i = index" [ngClass]="{'col-md-6': calculateTopicItem(i), 'col-md-12': !calculateTopicItem(i)}">
+        <app-topic-card [topic]="topic" *ngIf="calculateTopicItem(i)">
+            <div slot="comments-button">
+                <button type="button" (click)="openDialog(topic)" class="btn btn-sm custom-button">
+                    <i class="far fa-comment-dots"></i>
+                    <span> {{ topic.kids?.length || 0 }} Comments </span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </app-topic-card>
+        <app-topic-card-list [topic]="topic" *ngIf="!calculateTopicItem(i)">
+            <div slot="comments-button">
+                <button type="button" (click)="openDialog(topic)" class="btn btn-sm custom-button">
+                    <i class="far fa-comment-dots"></i>
+                    <span> {{ topic.kids?.length || 0 }} Comments </span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </app-topic-card-list>
+    </div>
+</div>
