@@ -6,26 +6,21 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 This is an Angular 15 project. Follow the steps below to set up and run the project.
 
-## Prerequisites
-
-Make sure you have the following installed:
-
-- [Node.js](https://nodejs.org/) (version 14.x or later)
-- [Angular CLI](https://angular.io/cli) (version 15.2.11)
-
 ## Setup
 
 1. **Extract Repository**
-
    ```bash
-   cd my-app4
+   cd TopicApps_FE
 
 2. **Install Depedencies**
    ```bash
-    npm install
+    docker build -t topicapps_fe .
 
 3. **Running the Project**
    ```bash
-    ng serve --open
+    docker run -d -p 80:80 topicapps_fe
+
+4. **Open browser and access Project on port 80**
+
 
 
